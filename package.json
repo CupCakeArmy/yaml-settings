@@ -1,0 +1,32 @@
+{
+  "name": "memiens",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "npm run build && mocha",
+    "prepublish": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CupCakeArmy/memiens.git"
+  },
+  "keywords": [],
+  "author": "Niccolo Bogioli",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CupCakeArmy/memiens/issues"
+  },
+  "homepage": "https://github.com/CupCakeArmy/memiens#readme",
+  "dependencies": {
+    "yaml": "^1"
+  },
+  "devDependencies": {
+    "@types/node": "^11",
+    "@types/yaml": "^1",
+    "mocha": "^6",
+    "typescript": "^3"
+  }
+}
