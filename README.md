@@ -1,4 +1,4 @@
-# Memiens
+# Memiens 🧠
 
 YAML Settings utility. Nested getter with optional default value and a setter.
 **Typescript typings included**
