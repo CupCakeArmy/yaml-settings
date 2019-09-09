@@ -1,13 +1,13 @@
 {
   "name": "memiens",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "scripts": {
     "build": "tsc",
     "test": "npm run build && mocha",
-    "prepublish": "npm run test"
+    "prepublishOnly": "npm run test"
   },
   "repository": {
     "type": "git",
