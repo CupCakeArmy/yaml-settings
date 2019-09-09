@@ -36,7 +36,7 @@ export default class Memiens {
 			this.set(setting, defaultValue)
 			return defaultValue
 		}
-		throw new Error('Could not load the setting')
+		throw new Error(`Could not load the setting: "${setting}" and no default value was provided`)
 	}
 
 
