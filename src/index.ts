@@ -1,13 +1,16 @@
-import { readFileSync, writeFileSync, lstatSync } from 'fs'
+import { readFileSync, writeFileSync } from 'fs'
 import { resolve } from 'path'
-import yaml from 'yaml'
+import * as yaml from 'yaml'
+
+
 
 type AllowedYamlTypes = string | number | boolean
 type AllowedTypes = AllowedYamlTypes | AllowedYamlTypes[]
 
-export default class Memento {
+export default class Memiens {
 	private readonly file: string
 	private state: any
+
 
 	constructor(file: string) {
 		this.file = resolve(file)
@@ -19,7 +22,8 @@ export default class Memento {
 		}
 	}
 
-	public get<AllowedTypes>(setting: string, defaultValue: AllowedTypes | undefined = undefined): AllowedTypes {
+
+	public get<T extends AllowedTypes>(setting: string, defaultValue: T | undefined = undefined): T {
 		const props = setting.split('.')
 		let root = this.state
 		try {
@@ -29,12 +33,12 @@ export default class Memento {
 		}
 		if (root) return root
 		if (defaultValue) {
-			// @ts-ignore
 			this.set(setting, defaultValue)
 			return defaultValue
 		}
 		throw new Error('Could not load the setting')
 	}
+
 
 	public set(setting: string, value: AllowedTypes): void {
 		const props = setting.split('.')
@@ -47,9 +51,11 @@ export default class Memento {
 		this.save()
 	}
 
+
 	private read() {
-		this.state = yaml.parse(readFileSync(this.file, 'utf-8'))
+		this.state = yaml.parse(readFileSync(this.file, 'utf-8')) || {}
 	}
+
 
 	private save() {
 		writeFileSync(this.file, yaml.stringify(this.state), 'utf-8')
