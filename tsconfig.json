@@ -1,11 +1,9 @@
 {
   "compilerOptions": {
-    "target": "esnext",
+    "target": "es2019",
     "module": "commonjs",
     "declaration": true,
-    "declarationMap": true,
-    "sourceMap": true,
-    "outDir": "./lib",
+    "outDir": "./dist",
     "rootDir": "./src",
     "strict": true,
     "noImplicitAny": true,
@@ -16,6 +14,7 @@
     "noImplicitThis": true,
     "alwaysStrict": true,
     "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "esModuleInterop": true
   }
 }

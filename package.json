@@ -1,32 +1,31 @@
 {
   "name": "memiens",
   "version": "1.0.4",
-  "description": "",
-  "main": "./lib/index.js",
-  "types": "./lib/index.d.ts",
+  "description": "Yaml config utility",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "build": "tsc",
     "test": "npm run build && mocha",
-    "prepublishOnly": "npm run test"
+    "prepublishOnly": "rm -rf lib && npm run test"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/CupCakeArmy/memiens.git"
+  "keywords": [
+    "yaml",
+    "config",
+    "utility"
+  ],
+  "author": {
+    "email": "hi@nicco.io",
+    "name": "Niccolo Borgioli",
+    "url": "https://nicco.io"
   },
-  "keywords": [],
-  "author": "Niccolo Bogioli",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/CupCakeArmy/memiens/issues"
-  },
-  "homepage": "https://github.com/CupCakeArmy/memiens#readme",
   "dependencies": {
-    "yaml": "1"
+    "yaml": "^1"
   },
   "devDependencies": {
-    "@types/node": "latest",
-    "@types/yaml": "1",
-    "mocha": "6",
-    "typescript": "3.6"
+    "@types/node": "^14",
+    "mocha": "^8",
+    "typescript": "^4"
   }
 }
